@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#lowbar {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    color: #eee;
+    width: 100%;
+    height: 50px;
+}
+
+#middlebar > input {
+    width: 95px;
+    text-align: center;
+    font-size: 18px;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    box-sizing: border-box;
+}
+
+#lowbar > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.barButton {
+    height: 100%;
+    width: 50px;
+    background-color: #000;
+    border: none;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.barButton:hover {
+    background: #222;
+    cursor: pointer;
+}
+
+i {
+    font-size: 22px;
+    color: white;
+}

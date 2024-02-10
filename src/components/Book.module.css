@@ -1,0 +1,29 @@
+#book {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 50px;
+    box-sizing: border-box;
+    margin-top: 50px;
+
+    width: 900px;
+    height: 70%;
+}
+
+#leftpage {
+    float: left;
+    width: 50%;
+    height: 100%;
+    border: 5px solid black;
+}
+
+#rightpage {
+    float: left;
+    width: 50%;
+    height: 100%;
+    border: 5px solid black;
+}

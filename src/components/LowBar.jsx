@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import styles from './LowBar.module.css';
 
-export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, goPagesBackward, pages, maxPage }) {
+export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, goPagesBackward, pages, maxPage, handleSwitch }) {
     const [isVolumeOn, setVolumeOn] = useState(true);
+    const [isInFullscreen, setIsInFullscreen] = useState(false);
 
     function customInputValue(left, right) {
         if (left === 0)
@@ -11,6 +12,30 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
             return left + '/' + maxPage;
         else
             return left + '-' + right + '/' + maxPage;
+    }
+
+    function handleFullscreen() {
+        if (isInFullscreen) {
+            // close fullscreen
+            if (document.exitFullscreen) 
+                document.exitFullscreen();
+            else if (document.webkitExitFullscreen)
+                document.webkitExitFullscreen();
+            else if (document.msExitFullscreen)
+                document.msExitFullscreen();
+        }
+        else {
+            let element = document.documentElement;
+
+            if (element.requestFullscreen)
+                element.requestFullscreen();
+            else if (element.webkitRequestFullscreen) 
+                element.webkitRequestFullscreen();
+            else if (element.msRequestFullscreen)
+                element.msRequestFullscreen();
+        }
+
+        setIsInFullscreen(!isInFullscreen);
     }
 
     function handleVolumeChange() {
@@ -25,6 +50,7 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
         <div>
             <button 
                 className={styles.barButton}
+                onClick={() => handleSwitch()}
             >
                 <i className="fa-solid fa-list"></i>
             </button>
@@ -93,6 +119,7 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
             </button>
             <button
                 className={styles.barButton}
+                onClick={() => handleFullscreen()}
             >
                 <i className="fa-solid fa-expand"></i>
             </button>

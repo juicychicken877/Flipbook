@@ -1,92 +1,27 @@
-import { useState } from 'react';
-import LowBar from './components/LowBar';
-import Book from './components/Book';
+import { useState } from "react";
+import Flipbook from "./components/Flipbook";
+import Menu from "./components/Menu.jsx";
+import { IMAGE_DATA } from './imageData.js';
 
-const MAX_PAGE = 26
+const DEFAULT_BOOK = {
+    name: IMAGE_DATA[0].name,
+    path: IMAGE_DATA[0].path,
+    pages: IMAGE_DATA[0].pages,
+    imageExtension: IMAGE_DATA[0].extension
+}
 
 export default function App() {
-    const [leftPageNumber, setLeftPageNumber] = useState(0);
-    const [rightPageNumber, setRightPageNumber] = useState(1);
+    const [isInMenu, setIsInMenu] = useState(true);
+    const [currentBook, setCurrentBook] = useState(DEFAULT_BOOK);
 
-    function goPagesBackward(pages) {
-        setLeftPageNumber(() => {
-            let page = leftPageNumber - pages;
-
-            if (page >= 1)
-                return page-1;
-            else
-                return 0;
-        })
-
-        setRightPageNumber(() => {
-            let page = rightPageNumber - pages;
-
-            if (page >= 1) 
-                return page-1;
-            else
-                return 1;
-        })
+    function handleSwitch(book) {
+        setCurrentBook((prevBook) => {
+            return book;
+        });
+        setIsInMenu(!isInMenu);
     }
-    
-    function goToFirstPage() {
-        setLeftPageNumber(() => {
-            return 0;
-        })
-        setRightPageNumber(() => {
-            return 1;
-        })
-    }
-
-    function goPagesForward(pages) {
-        setLeftPageNumber(() => {
-            let page = leftPageNumber + pages;
-
-            if (page <= MAX_PAGE)
-                return page+1;
-            else
-                return MAX_PAGE;
-        })
-
-        setRightPageNumber(() => {
-            let page = rightPageNumber + pages;
-
-            if (page <= MAX_PAGE) 
-                return page+1;
-            else
-                return MAX_PAGE+1;
-        })
-    }
-
-    function goToLastPage() {
-        setLeftPageNumber(() => {
-            return MAX_PAGE;
-        })
-
-        setRightPageNumber(() => {
-            return MAX_PAGE+1;
-        })
-    }
-
     return <>
-        <div id='highbar'></div>
-        <Book 
-            pages={{
-                left: leftPageNumber,
-                right: rightPageNumber
-            }}
-            maxPage={MAX_PAGE}
-        />
-        <LowBar 
-            goToLastPage={goToLastPage}
-            goPagesForward={goPagesForward} 
-            goToFirstPage={goToFirstPage}
-            goPagesBackward={goPagesBackward} 
-            pages={{
-                left: leftPageNumber,
-                right: rightPageNumber
-            }}
-            maxPage={MAX_PAGE}
-        />
+        {isInMenu ? <Menu handleSwitch={handleSwitch} /> : <Flipbook CURRENT_BOOK={currentBook} handleSwitch={handleSwitch}/> }
     </>
 }
 

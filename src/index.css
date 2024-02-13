@@ -1,5 +1,4 @@
-#highbar {
-    width: 100%;
-    height: 50px;
-    background-color: #000;
+body {
+    background: rgb(101,168,40);
+    background: linear-gradient(90deg, rgba(101,168,40,1) 16%, rgba(170,171,32,1) 45%, rgba(155,164,51,1) 71%);
 }

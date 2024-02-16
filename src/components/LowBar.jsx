@@ -51,12 +51,14 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
             <button 
                 className={styles.barButton}
                 onClick={() => handleSwitch()}
+                title='wroc do menu ksiazek'
             >
                 <i className="fa-solid fa-list"></i>
             </button>
 
             <button
                 className={styles.barButton}
+                title='przybliz'
             >
                 <i className="fa-solid fa-magnifying-glass-plus"></i>
             </button>
@@ -66,6 +68,7 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
             <button 
                 className={styles.barButton}
                 onClick={() => goToFirstPage()}
+                title='na poczatek ksiazki'
             >
                 <i className="fa-solid fa-backward-fast"></i>
             </button>
@@ -73,6 +76,7 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
             <button 
                 className={styles.barButton}
                 onClick={() => goPagesBackward(11)}
+                title='10 do tylu'
             >
                 <i className="fa-solid fa-angles-left"></i>
             </button>
@@ -80,6 +84,7 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
             <button 
                 className={styles.barButton}
                 onClick={() => goPagesBackward(1)}
+                title='1 do tylu'
             >
                 <i className="fa-solid fa-chevron-left"></i>
             </button>
@@ -91,6 +96,7 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
             <button 
                 className={styles.barButton}
                 onClick={() => goPagesForward(1)}
+                title='1 do przodu'
             >
                 <i className="fa-solid fa-chevron-right"></i>
             </button>
@@ -98,6 +104,7 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
             <button 
                 className={styles.barButton}
                 onClick={() => goPagesForward(11)}
+                title='10 do przodu'
             >
                 <i className="fa-solid fa-angles-right"></i>
             </button>
@@ -105,6 +112,7 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
             <button 
                 className={styles.barButton}
                 onClick={() => goToLastPage()}
+                title='na koniec ksiazki'
             >
                 <i className="fa-solid fa-forward-fast"></i>
             </button>
@@ -114,12 +122,14 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
             <button
                 className={styles.barButton}
                 onClick={() => handleVolumeChange()}
+                title='wylacz/wlacz dzwiek'
             >
                 {isVolumeOn ? <i className="fa-solid fa-volume-high"></i> : <i className="fa-solid fa-volume-xmark"></i>}
             </button>
             <button
                 className={styles.barButton}
                 onClick={() => handleFullscreen()}
+                title='pelny ekran'
             >
                 <i className="fa-solid fa-expand"></i>
             </button>

@@ -2,3 +2,9 @@ body {
     background: rgb(101,168,40);
     background: linear-gradient(90deg, rgba(101,168,40,1) 16%, rgba(170,171,32,1) 45%, rgba(155,164,51,1) 71%);
 }
+
+.boxshadow {
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 1);
+}

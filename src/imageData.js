@@ -11,4 +11,16 @@ export const IMAGE_DATA = [
         pages: 12,
         extension: '.jpeg'
     },
+    {
+        name: 'Welttour Deutsch 2 Podrecznik',
+        path: '/images/WelttourDeutsch2/Podrecznik/',
+        pages: 4,
+        extension: '.jpeg'
+    },
+    {
+        name: 'Welttour Deutsch 2 Zeszyt Cwiczen',
+        path: '/images/WelttourDeutsch2/Cwiczeniowka/',
+        pages: 4,
+        extension: '.jpeg'
+    }
 ]

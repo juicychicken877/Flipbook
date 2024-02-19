@@ -4,7 +4,7 @@ import styles from "./Menu.module.css"
 
 export default function Menu({ handleSwitch }) {
     return <>
-        <Highbar text="Choose a book"/>
+        <Highbar text="Wybierz ksiazke"/>
         <div id={styles.mainWindow}>
             { IMAGE_DATA.map((item) => {
                 let firstImage = item.path + '1' + item.extension;

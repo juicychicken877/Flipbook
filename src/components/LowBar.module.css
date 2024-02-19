@@ -4,7 +4,7 @@
 }
 
 #lowbar {
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     bottom: 0;

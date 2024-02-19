@@ -1,15 +1,21 @@
+:root {
+    --bookPageHeight: 80vh;
+    --bookPageWidth: calc(var(--bookPageHeight) * 0.7);
+}
+
 #book {
     position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-size: 50px;
     box-sizing: border-box;
-    margin-top: 30px;
-    height: 80%;
+    height: var(--bookPageHeight);
     background-color: #eee;
 }
 
@@ -21,7 +27,7 @@
 #leftpage, #rightpage {
     overflow: hidden;
     float: left;
-    width: 475px;
+    width: calc(var(--bookPageWidth));
     height: 100%;
     border: 2px solid black;
 }

@@ -5,11 +5,18 @@
 }
 
 #mainWindow > button {
-    width: 260px;
-    height: 350px;
+    width: 255px;
+    height: 360px;
     position: relative;
     cursor: pointer;
     border: none;
+    transition: 0.25s all ease-in-out;
+}
+
+#mainWindow > button:hover {
+    -webkit-box-shadow: 0px 0px 20px 0px #ddd;
+    -moz-box-shadow: 0px 0px 20px 0px #ddd;
+    box-shadow: 0px 0px 20px 0px #ddd;
 }
 
 #mainWindow > button > img {

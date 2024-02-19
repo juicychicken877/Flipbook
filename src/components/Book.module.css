@@ -27,7 +27,6 @@
 #leftpage, #rightpage {
     overflow: hidden;
     float: left;
-    width: calc(var(--bookPageWidth));
+    width: var(--bookPageWidth);
     height: 100%;
-    border: 2px solid black;
 }

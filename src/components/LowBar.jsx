@@ -3,6 +3,7 @@ import styles from './LowBar.module.css';
 
 export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, goPagesBackward, pages, maxPage, handleSwitch }) {
     const [isVolumeOn, setVolumeOn] = useState(true);
+    const [isInZoom, setIsInZoom] = useState(false);
     const [isInFullscreen, setIsInFullscreen] = useState(false);
 
     function customInputValue(left, right) {
@@ -38,6 +39,10 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
         setIsInFullscreen(!isInFullscreen);
     }
 
+    function handleZooming() {
+        setIsInZoom(!isInZoom);
+    }
+
     function handleVolumeChange() {
         setVolumeOn(!isVolumeOn);
     }
@@ -59,8 +64,9 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
             <button
                 className={styles.barButton}
                 title='przybliz'
+                onClick={() => handleZooming()}
             >
-                <i className="fa-solid fa-magnifying-glass-plus"></i>
+                {isInZoom ? <i class="fa-solid fa-magnifying-glass-minus"></i> : <i className="fa-solid fa-magnifying-glass-plus"></i> }
             </button>
         </div>
 

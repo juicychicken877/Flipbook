@@ -58,7 +58,7 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
                 onClick={() => handleSwitch()}
                 title='wroc do menu ksiazek'
             >
-                <i className="fa-solid fa-list"></i>
+                <span className="material-symbols-outlined">library_books</span>
             </button>
 
             <button
@@ -66,7 +66,7 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
                 title='przybliz'
                 onClick={() => handleZooming()}
             >
-                {isInZoom ? <i class="fa-solid fa-magnifying-glass-minus"></i> : <i className="fa-solid fa-magnifying-glass-plus"></i> }
+                {isInZoom ? <span class="material-symbols-outlined">zoom_out</span> : <span className="material-symbols-outlined">zoom_in</span> }
             </button>
         </div>
 
@@ -76,7 +76,7 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
                 onClick={() => goToFirstPage()}
                 title='na poczatek ksiazki'
             >
-                <i className="fa-solid fa-backward-fast"></i>
+                <span className="material-symbols-outlined">arrow_left_alt</span>
             </button>
 
             <button 
@@ -84,7 +84,7 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
                 onClick={() => goPagesBackward(11)}
                 title='10 do tylu'
             >
-                <i className="fa-solid fa-angles-left"></i>
+                <span className="material-symbols-outlined">keyboard_double_arrow_left</span>            
             </button>
 
             <button 
@@ -92,7 +92,7 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
                 onClick={() => goPagesBackward(1)}
                 title='1 do tylu'
             >
-                <i className="fa-solid fa-chevron-left"></i>
+                <span className="material-symbols-outlined">keyboard_arrow_left</span>
             </button>
 
             <input type='text' value={ customInputValue(pages.left, pages.right)} 
@@ -104,7 +104,7 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
                 onClick={() => goPagesForward(1)}
                 title='1 do przodu'
             >
-                <i className="fa-solid fa-chevron-right"></i>
+                <span className="material-symbols-outlined">keyboard_arrow_right</span>            
             </button>
             
             <button 
@@ -112,7 +112,7 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
                 onClick={() => goPagesForward(11)}
                 title='10 do przodu'
             >
-                <i className="fa-solid fa-angles-right"></i>
+                <span className="material-symbols-outlined">keyboard_double_arrow_right</span>
             </button>
 
             <button 
@@ -120,7 +120,7 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
                 onClick={() => goToLastPage()}
                 title='na koniec ksiazki'
             >
-                <i className="fa-solid fa-forward-fast"></i>
+                <span className="material-symbols-outlined">arrow_right_alt</span>
             </button>
         </div>
         
@@ -130,14 +130,14 @@ export default function LowBar({ goToLastPage, goPagesForward, goToFirstPage, go
                 onClick={() => handleVolumeChange()}
                 title='wylacz/wlacz dzwiek'
             >
-                {isVolumeOn ? <i className="fa-solid fa-volume-high"></i> : <i className="fa-solid fa-volume-xmark"></i>}
+                {isVolumeOn ? <span className="material-symbols-outlined">volume_up</span> : <span class="material-symbols-outlined">volume_off</span>}
             </button>
             <button
                 className={styles.barButton}
                 onClick={() => handleFullscreen()}
                 title='pelny ekran'
             >
-                <i className="fa-solid fa-expand"></i>
+                <span className="material-symbols-outlined">fullscreen</span>
             </button>
         </div>
     </div>

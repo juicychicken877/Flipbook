@@ -47,7 +47,7 @@
     cursor: pointer;
 }
 
-i {
-    font-size: 22px;
+span {
     color: #bbb;
+    font-size: 30px !important;
 }
